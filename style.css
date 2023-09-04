@@ -1,0 +1,150 @@
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: url(/images/pattern-background-desktop.svg), var(--pale-blue);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  font-family: "Red Hat Display", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 450px;
+
+  background-color: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 32px 32px hsla(245, 75%, 52%, 0.1);
+  text-align: center;
+}
+
+.card-content {
+  padding: 32px 42px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-secondary {
+  margin-bottom: 24px;
+  color: var(--dark-blue);
+}
+
+.hero-text {
+  color: var(--desaturated-blue);
+  margin-bottom: 24px;
+}
+
+.hero-plan {
+  background-color: var(--very-pale-blue);
+  border-radius: 8px;
+  padding: 16px;
+
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: left;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.hero-plan img {
+  grid-row: 1 / -1;
+}
+
+.heading-tertiary {
+  font-size: 16px;
+}
+
+.price {
+  grid-row: 2;
+  color: var(--desaturated-blue);
+}
+
+.plan-link:link,
+.plan-link:visited {
+  grid-row: 1 / -1;
+  color: var(--bright-blue);
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.btn-blue {
+  padding: 16px 0;
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--bright-blue);
+  font-weight: 900;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 12px hsla(245, 75%, 52%, 0.2);
+  font-family: "Red Hat Display", sans-serif;
+  transition: all 0.3s;
+}
+
+.btn-white {
+  border: none;
+  border-radius: 8px;
+  color: var(--desaturated-blue);
+  background-color: var(--white);
+  font-weight: 900;
+  font-family: "Red Hat Display", sans-serif;
+  transition: all 0.3s;
+}
+
+.plan-link:hover,
+.plan-link:active,
+.btn-blue:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.btn-white:hover {
+  color: var(--dark-blue);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    margin: 48px 24px;
+    width: 100%;
+  }
+
+  .hero-img {
+    width: 100%;
+  }
+
+  .card-content {
+    padding: 24px 24px;
+  }
+
+  .heading-secondary {
+    margin-bottom: 16px;
+  }
+
+  .heading-tertiary,
+  .price {
+    font-size: 14px;
+  }
+}
